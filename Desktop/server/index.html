@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>服务器测试专用</title>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>点击获取服务器资源</button>
+    <script>
+        var button = document.querySelector("button");
+        var text = document.querySelector("textarea")
+        button.onclick = function () {
+            const instance = axios.create({
+                baseURL: 'http://127.0.0.1:8001',
+                withCredentials:true,
+                timeout: 1000,
+            });
+            instance.post('/api/test',{
+                'first':'aaa',
+                'second':'bbb'
+            }).then((res)=>{
+                text.innerHTML=res.data;
+            })
+        };
+    </script>
+</body>
+
+</html>

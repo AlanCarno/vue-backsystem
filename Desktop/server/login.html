@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟登录界面</title>
+</head>
+
+<body>
+    <h2>未登录</h2>
+    <script>
+        class Father {
+            static a=10;
+            constructor(height) {
+                this.height=height;
+                this.sayHi=function() {
+                    console.log('sayye')
+                }
+            }
+            sayHi() {
+                console.log('hi')
+            }
+        }
+        class Son extends Father {
+            constructor(name,age,height) {
+                super(height);
+                this.name=name;
+                this.age=age;
+            }
+            sayYES() {
+
+            }
+        }
+        const a=new Father(19);
+        console.log(Father.a)
+        const b=new Son('Alan',18,10)
+        console.log(b)
+    </script>
+</body>
+
+</html>
